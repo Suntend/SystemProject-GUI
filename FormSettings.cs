@@ -22,7 +22,11 @@ namespace vsGUI
             labelNoPortWarn.Visible = false;
 
             //获取端口列表
-            GlobalMethod.GetPort();
+            if (GlobalValue.globalIsPortOpening == false)
+            {
+                GlobalMethod.GetPort();
+            }
+            
 
             //判断是否为空
             if (GlobalValue.globalPortName.Length != 0 && GlobalValue.globalPortName != null)
