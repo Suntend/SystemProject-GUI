@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Softimite Language="CN">
+	<Form name="FormSettings">
+		<Controls name="label1" Text="中文-test"/>
+
+	</Form>
+</Softimite>

@@ -21,7 +21,7 @@ namespace vsGUI
 
             labelNoPortWarn.Visible = false;
 
-            //获取端口列表
+            //获取端口列表，判断状态防止open时load
             if (GlobalValue.globalIsPortOpening == false)
             {
                 GlobalMethod.GetPort();
@@ -82,6 +82,16 @@ namespace vsGUI
                 GlobalMethod.ClosePort();
             }
             buttonSet();
+        }
+
+        private void radioButtonEN_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonCN_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
