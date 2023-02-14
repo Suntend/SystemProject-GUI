@@ -21,12 +21,13 @@ namespace vsGUI
 
             labelNoPortWarn.Visible = false;
 
+            buttonLanguageSet();
+
             //获取端口列表，判断状态防止open时load
             if (GlobalValue.globalIsPortOpening == false)
             {
                 GlobalMethod.GetPort();
             }
-            
 
             //判断是否为空
             if (GlobalValue.globalPortName.Length != 0 && GlobalValue.globalPortName != null)
@@ -41,7 +42,7 @@ namespace vsGUI
 
                 comboBoxPort.Visible = true;
                 buttonPortOpenClose.Visible = true;
-                buttonSet();
+                buttonPortSet();
             }
             else
             {
@@ -57,7 +58,21 @@ namespace vsGUI
             GlobalMethod.LoadPort();
         }
 
-        private void buttonSet()
+        private void buttonPortOpenClose_Click(object sender, EventArgs e)
+        {
+            if (GlobalValue.globalIsPortOpening == false)
+            {
+                GlobalMethod.OpenPort();
+            }
+            else if (GlobalValue.globalIsPortOpening == true)
+            {
+                GlobalMethod.ClosePort();
+            }
+            buttonPortSet();
+        }
+
+        //换字换色
+        private void buttonPortSet()
         {
             if (GlobalValue.globalIsPortOpening == true)
             {
@@ -71,27 +86,38 @@ namespace vsGUI
             }
         }
 
-        private void buttonPortOpenClose_Click(object sender, EventArgs e)
+
+
+
+
+
+        private void buttonLanguage_Click(object sender, EventArgs e)
         {
-            if (GlobalValue.globalIsPortOpening == false)
+            if (radioButtonCN.Checked)
             {
-                GlobalMethod.OpenPort();
+                GlobalValue.globalLanguage = 1;
+                MessageBox.Show("已切换为简体中文！");
             }
-            else if (GlobalValue.globalIsPortOpening == true)
+            else if (radioButtonEN.Checked)
             {
-                GlobalMethod.ClosePort();
+                GlobalValue.globalLanguage = 0;
+                MessageBox.Show("Switched to English!");
             }
-            buttonSet();
+            buttonLanguageSet();
         }
 
-        private void radioButtonEN_CheckedChanged(object sender, EventArgs e)
+        private void buttonLanguageSet()
         {
-
-        }
-
-        private void radioButtonCN_CheckedChanged(object sender, EventArgs e)
-        {
-
+            if (GlobalValue.globalLanguage == 0)
+            {
+                radioButtonEN.Checked = true;
+                radioButtonCN.Checked = false;
+            }
+            else if (GlobalValue.globalLanguage == 1)
+            {
+                radioButtonEN.Checked = false;
+                radioButtonCN.Checked = true;
+            }
         }
     }
 }

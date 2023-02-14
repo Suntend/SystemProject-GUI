@@ -9,9 +9,15 @@ using System.Xml;
 
 namespace vsGUI
 {
-    class ChangeLanguage
+    public static class ChangeLanguage
     {
-        public static string DefaultLanguage = "CN";
+        //public static string DefaultLanguage = "CN";
+
+        public static string GetDefaultLanguage()
+        {
+            string defaultLanguage = "CN";
+            return defaultLanguage;
+        }
 
         //加载语言
         public static bool LoadLanguage(Form form, string language)
@@ -125,7 +131,7 @@ namespace vsGUI
             }
             catch (Exception e)
             {
-                return null;
+                throw new Exception(e.Message);
             }
         }
 
@@ -177,7 +183,7 @@ namespace vsGUI
             }
             catch (Exception e)
             {
-                return null;
+                throw new Exception(e.Message);
             }
         }
 

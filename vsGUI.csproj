@@ -146,8 +146,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="LanguageCN.xml" />
-    <Content Include="LanguageEN.xml" />
     <Content Include="Resources\BF-GIF.gif" />
     <Content Include="Resources\C1.jpg" />
     <Content Include="Resources\C2.jpg" />

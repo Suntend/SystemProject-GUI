@@ -55,6 +55,11 @@ Global Value
       | 3 - Settings            - Settings
       | 8 - Bartending / Finish -
 
+  GlobalValue.globalLanguage (int)
+    Used to represent the current language.
+      | 0 - EN  English  英文
+      | 1 - CN  Chinese  中文
+
 
 
 Log

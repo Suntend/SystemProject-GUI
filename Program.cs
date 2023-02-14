@@ -45,6 +45,9 @@ namespace vsGUI
         public static string[] globalPortName;
         public static string globalPortNameSet;
         public static bool globalIsPortOpening;
+
+        // 0 = EN, 1 = CN
+        public static int globalLanguage = 0;
     }
 
     //所有的自创方法都写这个类下就行
