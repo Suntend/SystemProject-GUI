@@ -15,6 +15,16 @@ namespace vsGUI
         public FormClassicInfo3()
         {
             InitializeComponent();
+
+            if (GlobalValue.globalLanguage)
+            {
+                buttonC1.Text = "长岛冰茶";
+                labelInfoEN.Visible = false;
+            }
+            else
+            {
+                labelInfoCN.Visible = false;
+            }
         }
 
         private void buttonBack_Click(object sender, EventArgs e)

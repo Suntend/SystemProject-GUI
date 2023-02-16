@@ -31,17 +31,19 @@ namespace vsGUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClassicInfo1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelInfo = new System.Windows.Forms.Label();
+            this.labelInfoEN = new System.Windows.Forms.Label();
             this.buttonYes = new System.Windows.Forms.Button();
             this.buttonC1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelInfoCN = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.labelInfo);
+            this.panel1.Controls.Add(this.labelInfoCN);
+            this.panel1.Controls.Add(this.labelInfoEN);
             this.panel1.Controls.Add(this.buttonYes);
             this.panel1.Controls.Add(this.buttonC1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -51,15 +53,15 @@ namespace vsGUI
             this.panel1.Size = new System.Drawing.Size(568, 361);
             this.panel1.TabIndex = 0;
             // 
-            // labelInfo
+            // labelInfoEN
             // 
-            this.labelInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelInfo.Location = new System.Drawing.Point(196, 24);
-            this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(360, 240);
-            this.labelInfo.TabIndex = 6;
-            this.labelInfo.Text = resources.GetString("labelInfo.Text");
+            this.labelInfoEN.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelInfoEN.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelInfoEN.Location = new System.Drawing.Point(196, 24);
+            this.labelInfoEN.Name = "labelInfoEN";
+            this.labelInfoEN.Size = new System.Drawing.Size(360, 240);
+            this.labelInfoEN.TabIndex = 6;
+            this.labelInfoEN.Text = resources.GetString("labelInfoEN.Text");
             // 
             // buttonYes
             // 
@@ -101,6 +103,17 @@ namespace vsGUI
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // labelInfoCN
+            // 
+            this.labelInfoCN.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelInfoCN.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelInfoCN.Location = new System.Drawing.Point(196, 24);
+            this.labelInfoCN.Name = "labelInfoCN";
+            this.labelInfoCN.Size = new System.Drawing.Size(360, 240);
+            this.labelInfoCN.TabIndex = 7;
+            this.labelInfoCN.Text = "       龙舌兰日出，少量墨西哥产的龙舌兰酒加大量鲜橙汁佐以红糖水调制而成。辅以橙角或者红车厘子装饰，高身的香槟杯会赋予它优雅的气质。\r\n       这款龙" +
+    "舌兰日出鸡尾酒的名字与依古路斯所作的乐曲名相同。\r\n\r\n基酒：龙舌兰（40ml）\r\n配料：柠檬汁（20ml），菠萝汁（20ml）\r\n\r\n价格：33 元人民币";
+            // 
             // FormClassicInfo1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -122,6 +135,7 @@ namespace vsGUI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonC1;
         private System.Windows.Forms.Button buttonYes;
-        private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.Label labelInfoEN;
+        private System.Windows.Forms.Label labelInfoCN;
     }
 }

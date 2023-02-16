@@ -60,12 +60,6 @@
     <Compile Include="FormClassic.Designer.cs">
       <DependentUpon>FormClassic.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormClassicDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormClassicDetail.Designer.cs">
-      <DependentUpon>FormClassicDetail.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormClassicInfo1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,9 +104,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormClassic.resx">
       <DependentUpon>FormClassic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormClassicDetail.resx">
-      <DependentUpon>FormClassicDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormClassicInfo1.resx">
       <DependentUpon>FormClassicInfo1.cs</DependentUpon>

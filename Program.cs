@@ -38,10 +38,6 @@ namespace vsGUI
         //Used to represent the current window ID.
         public static int globalFormNumber;
 
-        public static bool ifCheckPort;
-        public static bool ifCheckCommunication;
-        public static bool ifCheckPress;
-
         public static string[] globalPortName;
         public static string globalPortNameSet;
         public static bool globalIsPortOpening;

@@ -17,6 +17,16 @@ namespace vsGUI
         public FormClassicInfo1()
         {
             InitializeComponent();
+
+            if (GlobalValue.globalLanguage)
+            {
+                buttonC1.Text = "龙舌兰日出";
+                labelInfoEN.Visible = false;
+            }
+            else
+            {
+                labelInfoCN.Visible = false;
+            }
         }
 
         //When click the button, the corresponding childForm will be displayed.

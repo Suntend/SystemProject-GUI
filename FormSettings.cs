@@ -21,6 +21,16 @@ namespace vsGUI
             labelNoPortWarn.Visible     = false;
             labelPortNameCOM.Visible    = false;
 
+            if (GlobalValue.globalLanguage)
+            {
+                labelPortName.Text = "端口：";
+                labelNoPortWarn.Text = "没有端口！";
+                labelMore.Text = "探索更多：";
+                buttonToO.Text = "官方网站 >";
+                buttonToG.Text = "Github >";
+                buttonToB.Text = "联系作者 >";
+            }
+
             buttonLanguageSet();
             buttonPortSet();
 
@@ -158,6 +168,21 @@ namespace vsGUI
                 radioButtonEN.Checked = false;
                 radioButtonCN.Checked = true;
             }
+        }
+
+        private void buttonToO_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.baidu.com/");
+        }
+
+        private void buttonToG_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Suntend/vsGUI");
+        }
+
+        private void buttonToB_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://space.bilibili.com/340532672");
         }
     }
 }

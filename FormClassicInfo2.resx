@@ -117,20 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelInfo.Text" xml:space="preserve">
+  <data name="labelInfoEN.Text" xml:space="preserve">
     <value>This cocktail is a cocktail that represents Pisces in the constellation cocktail. Among them, the blue orange wine represents the blue ocean, the crushed ice in the glass symbolizes the rising waves, and the sweetness of the fruit juice in the glass is like the whisper of Hawaiian breeze.
 
-Base wine:    Rum
-Ingredients:  Blue Curacao
-                      Coconut Milk
-                      Pineapple Juice
+Base wine:    Rum (40ml)
+Ingredients:  Pineapple Juice (20ml)
+                      Blue Curacao (20ml)
+
 Price:             £3</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAAAL1JREFUSEvt0j0KwyAUwPFsdpKOmR2kk3PICYoHcO6FhOAFPErHkqlH8BgdU58o
+        wwAADsMBx2+oZAAAAL1JREFUSEvt0j0KwyAUwPFsdpKOmR2kk3PICYoHcO6FhOAFPErHkqlH8BgdU58o
         hJDWFnyZ3g8emLzhTz46Qsg/QggnKeWklJrgnG/jglD0iMcFxlo7pAWmbVQIcU8LTHvR6JyWWCialr/y
         3vfzPPf5sqpJ1Dl3YYy9YLTW13z7o2avF54WovG41OLNvynEanG0H+lbHC1a7MXRo8U2zjl/whkGLVqs
         42XQo8U6fli0MMYM4zjeDo0SQuq67g2Trq1VyAwldAAAAABJRU5ErkJggg==

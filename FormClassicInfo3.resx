@@ -117,21 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelInfo.Text" xml:space="preserve">
+  <data name="labelInfoEN.Text" xml:space="preserve">
     <value>Although it is called iced tea, a delicious cocktail with the color and taste of black tea is prepared without using half a drop of black tea. It's quite high in alcohol, so don't be fooled by the sweetness of the curacao, lemon juice and cola.
 
-Base wine:    Gin  Rum  Tequila
-                      Vodka   Triple sec
-Ingredients:  Lemon juice
-                      Syrup
-                      Cola
+Base wine:    Tequila (30ml)
+                      Vodka (30ml)
+Ingredients:  Lemon Juice (20ml)
+
 Price:             £5</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAAAL1JREFUSEvt0j0KwyAUwPFsdpKOmR2kk3PICYoHcO6FhOAFPErHkqlH8BgdU58o
+        wwAADsMBx2+oZAAAAL1JREFUSEvt0j0KwyAUwPFsdpKOmR2kk3PICYoHcO6FhOAFPErHkqlH8BgdU58o
         hJDWFnyZ3g8emLzhTz46Qsg/QggnKeWklJrgnG/jglD0iMcFxlo7pAWmbVQIcU8LTHvR6JyWWCialr/y
         3vfzPPf5sqpJ1Dl3YYy9YLTW13z7o2avF54WovG41OLNvynEanG0H+lbHC1a7MXRo8U2zjl/whkGLVqs
         42XQo8U6fli0MMYM4zjeDo0SQuq67g2Trq1VyAwldAAAAABJRU5ErkJggg==

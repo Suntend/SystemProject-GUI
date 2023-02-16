@@ -19,6 +19,10 @@ Basic Info
   IDE                - Microsoft Visual Studio Community 2022 (Version 17.4.4)
   Project dependency - .NET Framework 4.8
 
+  Official Website   - 
+  Browse in Github   - https://github.com/Suntend/vsGUI
+  Contact Author     - https://space.bilibili.com/340532672
+
 
 
 Introduction of highlights and precautions
@@ -28,13 +32,29 @@ Introduction of highlights and precautions
 
   +2 Use Git for project collaboration and version control.
      使用Git进行项目协同与版本控制。
-     https://github.com/Suntend/vsGUI
 
   +3 Multilingual switching.(EN/CN)
      多语言切换。（中文/英文）
 
   -1 If there are only two serial ports and the receiver occupied a serial port, the program may be down.
      如果仅有两个串口，且接收端已经占用了其中一个串口，程序会出错。
+
+
+
+Cocktails
+  
+  1 - Tequila
+  2 - Rum
+  3 - Vodka
+  4 - Lemon Juice
+  5 - Pineapple Juice
+  6 - Blue Curacao
+
+  Tequila Sunrise      - 14 42 52
+  Blue Hawaii          - 24 52 62
+  Long Island Iced Tea - 13 33 42
+
+  Max 80ml
 
 
 
@@ -86,4 +106,8 @@ Log
   2023.02.14  Serial communication - Improve the serial port loading mechanism.
               串口通信：完善串口加载机制。
 
-  2023.02.15  
+  2023.02.15  Multi-language switch.
+              中英文切换。
+
+  2023.02.16  Multi-language switch.
+              中英文切换。

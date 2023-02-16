@@ -30,28 +30,30 @@ namespace vsGUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClassicInfo2));
-            this.labelInfo = new System.Windows.Forms.Label();
+            this.labelInfoEN = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonC1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelInfoCN = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelInfo
+            // labelInfoEN
             // 
-            this.labelInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelInfo.Location = new System.Drawing.Point(196, 24);
-            this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(360, 240);
-            this.labelInfo.TabIndex = 6;
-            this.labelInfo.Text = resources.GetString("labelInfo.Text");
+            this.labelInfoEN.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelInfoEN.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelInfoEN.Location = new System.Drawing.Point(196, 24);
+            this.labelInfoEN.Name = "labelInfoEN";
+            this.labelInfoEN.Size = new System.Drawing.Size(360, 240);
+            this.labelInfoEN.TabIndex = 6;
+            this.labelInfoEN.Text = resources.GetString("labelInfoEN.Text");
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.labelInfo);
+            this.panel1.Controls.Add(this.labelInfoCN);
+            this.panel1.Controls.Add(this.labelInfoEN);
             this.panel1.Controls.Add(this.buttonBack);
             this.panel1.Controls.Add(this.buttonC1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -101,6 +103,18 @@ namespace vsGUI
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // labelInfoCN
+            // 
+            this.labelInfoCN.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelInfoCN.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelInfoCN.Location = new System.Drawing.Point(196, 24);
+            this.labelInfoCN.Name = "labelInfoCN";
+            this.labelInfoCN.Size = new System.Drawing.Size(360, 240);
+            this.labelInfoCN.TabIndex = 7;
+            this.labelInfoCN.Text = "       这款鸡尾酒是以朗姆酒为基酒，配以蓝橙力娇酒、椰奶、菠萝汁等辅料制作而成的一款鸡尾酒。\r\n       其中，蓝橙酒代表蓝色的海洋，塞满酒杯中的碎冰象" +
+    "征着泛起的浪花，而酒杯里散发的果汁甜味犹如夏威夷的微风细语。\r\n\r\n基酒：朗姆酒（40ml）\r\n配料：菠萝汁（20ml），蓝橙酒（20ml）\r\n\r\n价格：25 " +
+    "元人民币";
+            // 
             // FormClassicInfo2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -118,10 +132,11 @@ namespace vsGUI
 
         #endregion
 
-        private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.Label labelInfoEN;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonC1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelInfoCN;
     }
 }

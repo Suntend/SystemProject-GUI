@@ -117,20 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelInfo.Text" xml:space="preserve">
+  <data name="labelInfoEN.Text" xml:space="preserve">
     <value>Tequila sunrise, a small amount of tequila produced in Mexico, mixed with a large amount of fresh orange juice and brown sugar water. Decorated with orange corners or red cherries, a tall champagne glass will give it an elegant look. The name is the same as the music composed by Igorus.
 
-Base wine:    Tequila
-Ingredients:  Orange juice
-                      Lemon juice
-                      Pomegranate juice
+Base wine:    Tequila (40ml)
+Ingredients:  Lemon Juice (20ml)
+                      Pineapple Juice (20ml)
+
 Price:             £4</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonYes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAAAL1JREFUSEvt0j0KwyAUwPFsdpKOmR2kk3PICYoHcO6FhOAFPErHkqlH8BgdU58o
+        wwAADsMBx2+oZAAAAL1JREFUSEvt0j0KwyAUwPFsdpKOmR2kk3PICYoHcO6FhOAFPErHkqlH8BgdU58o
         hJDWFnyZ3g8emLzhTz46Qsg/QggnKeWklJrgnG/jglD0iMcFxlo7pAWmbVQIcU8LTHvR6JyWWCialr/y
         3vfzPPf5sqpJ1Dl3YYy9YLTW13z7o2avF54WovG41OLNvynEanG0H+lbHC1a7MXRo8U2zjl/whkGLVqs
         42XQo8U6fli0MMYM4zjeDo0SQuq67g2Trq1VyAwldAAAAABJRU5ErkJggg==
