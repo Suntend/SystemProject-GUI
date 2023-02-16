@@ -41,10 +41,11 @@ namespace vsGUI
             this.buttonBack = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
             this.panelForm = new System.Windows.Forms.Panel();
-            this.labelInfo = new System.Windows.Forms.Label();
+            this.labelInfoEN = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelInfoCN = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -204,7 +205,8 @@ namespace vsGUI
             // 
             // panelForm
             // 
-            this.panelForm.Controls.Add(this.labelInfo);
+            this.panelForm.Controls.Add(this.labelInfoCN);
+            this.panelForm.Controls.Add(this.labelInfoEN);
             this.panelForm.Controls.Add(this.pictureBox3);
             this.panelForm.Controls.Add(this.pictureBox2);
             this.panelForm.Controls.Add(this.pictureBox1);
@@ -214,15 +216,15 @@ namespace vsGUI
             this.panelForm.Size = new System.Drawing.Size(584, 386);
             this.panelForm.TabIndex = 2;
             // 
-            // labelInfo
+            // labelInfoEN
             // 
-            this.labelInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelInfo.Location = new System.Drawing.Point(73, 50);
-            this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(440, 195);
-            this.labelInfo.TabIndex = 3;
-            this.labelInfo.Text = resources.GetString("labelInfo.Text");
+            this.labelInfoEN.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelInfoEN.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelInfoEN.Location = new System.Drawing.Point(73, 50);
+            this.labelInfoEN.Name = "labelInfoEN";
+            this.labelInfoEN.Size = new System.Drawing.Size(440, 195);
+            this.labelInfoEN.TabIndex = 3;
+            this.labelInfoEN.Text = resources.GetString("labelInfoEN.Text");
             // 
             // pictureBox3
             // 
@@ -259,6 +261,16 @@ namespace vsGUI
             this.pictureBox1.Size = new System.Drawing.Size(75, 75);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // labelInfoCN
+            // 
+            this.labelInfoCN.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelInfoCN.Location = new System.Drawing.Point(77, 50);
+            this.labelInfoCN.Name = "labelInfoCN";
+            this.labelInfoCN.Size = new System.Drawing.Size(444, 195);
+            this.labelInfoCN.TabIndex = 4;
+            this.labelInfoCN.Text = "智能调酒机器人最初的设计目的是能够根据顾客的口味制作特定的鸡尾酒。既能完美满足不同顾客的口味，又能将调酒师从繁琐的工作中解放出来。\r\n\r\n机器人可以完成给定的鸡尾" +
+    "酒任务，准确添加每种成分以确保每次都具有相同的高质量。";
             // 
             // FormMain
             // 
@@ -304,7 +316,8 @@ namespace vsGUI
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.Label labelInfoEN;
+        private System.Windows.Forms.Label labelInfoCN;
     }
 }
 

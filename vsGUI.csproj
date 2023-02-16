@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>vsGUI</RootNamespace>
     <AssemblyName>vsGUI</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -59,6 +60,12 @@
     <Compile Include="FormClassic.Designer.cs">
       <DependentUpon>FormClassic.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormClassicDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClassicDetail.Designer.cs">
+      <DependentUpon>FormClassicDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormClassicInfo1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +102,7 @@
     <Compile Include="FormSettings.Designer.cs">
       <DependentUpon>FormSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="LanguageStrings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBF.resx">
@@ -102,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormClassic.resx">
       <DependentUpon>FormClassic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClassicDetail.resx">
+      <DependentUpon>FormClassicDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormClassicInfo1.resx">
       <DependentUpon>FormClassicInfo1.cs</DependentUpon>

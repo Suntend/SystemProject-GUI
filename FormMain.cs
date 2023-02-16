@@ -22,6 +22,28 @@ namespace vsGUI
 
             GlobalValue.globalFormNumber = 0;
             buttonBack.Visible = false;
+
+            SetLabelInfoLanguage();
+        }
+
+        private void SetLabelInfoLanguage()
+        {
+            if (GlobalValue.globalLanguage)
+            {
+                labelInfoCN.Visible = true;
+                labelInfoEN.Visible = false;
+                buttonClassic.Text  = LanguageStrings.FM_C_buttonClassic;
+                buttonDesign.Text   = LanguageStrings.FM_C_buttonDesign;
+                buttonSettings.Text = LanguageStrings.FM_C_buttonSettings;
+            }
+            else
+            {
+                labelInfoCN.Visible = false;
+                labelInfoEN.Visible = true;
+                buttonClassic.Text  = LanguageStrings.FM_E_buttonClassic;
+                buttonDesign.Text   = LanguageStrings.FM_E_buttonDesign;
+                buttonSettings.Text = LanguageStrings.FM_E_buttonSettings;
+            }
         }
 
         //Configure button display effect.
@@ -73,41 +95,61 @@ namespace vsGUI
             childForm.BringToFront();
             childForm.Show();
 
-            switch(GlobalValue.globalFormNumber)
+            if (GlobalValue.globalLanguage)
             {
-                case 0:
-                    labelTitle.Text = "W E L C O M E";
-                    break;
+                switch (GlobalValue.globalFormNumber)
+                {
+                    case 0:
+                        labelTitle.Text = LanguageStrings.FM_C_labelTitle1; break;
 
-                case 1:
-                    labelTitle.Text = "Classic cocktails";
-                    break;
+                    case 1:
+                        labelTitle.Text = LanguageStrings.FM_C_labelTitle2; break;
 
-                case 2:
-                    labelTitle.Text = "Design your own";
-                    break;
+                    case 2:
+                        labelTitle.Text = LanguageStrings.FM_C_labelTitle3; break;
 
-                case 3:
-                    labelTitle.Text = "Settings";
-                    break;
+                    case 3:
+                        labelTitle.Text = LanguageStrings.FM_C_labelTitle4; break;
 
-                case 4:
+                    case 4: case 5: case 6:
+                        labelTitle.Text = LanguageStrings.FM_C_labelTitle2; break;
 
-                case 5:
+                    case 7:
+                        labelTitle.Text = LanguageStrings.FM_C_labelTitle3; break;
 
-                case 6:
+                    case 8:
+                        labelTitle.Text = LanguageStrings.FM_C_labelTitle5;
+                        buttonBack.Visible = false;
+                        break;
+                }
+            }
+            else
+            {
+                switch (GlobalValue.globalFormNumber)
+                {
+                    case 0:
+                        labelTitle.Text = LanguageStrings.FM_E_labelTitle1; break;
 
-                    labelTitle.Text = "Classic cocktails";
-                    break;
+                    case 1:
+                        labelTitle.Text = LanguageStrings.FM_E_labelTitle2; break;
 
-                case 7:
-                    labelTitle.Text = "Design your own";
-                    break;
+                    case 2:
+                        labelTitle.Text = LanguageStrings.FM_E_labelTitle3; break;
 
-                case 8:
-                    labelTitle.Text = "Bartending";
-                    buttonBack.Visible = false;
-                    break;
+                    case 3:
+                        labelTitle.Text = LanguageStrings.FM_E_labelTitle4; break;
+
+                    case 4: case 5: case 6:
+                        labelTitle.Text = LanguageStrings.FM_E_labelTitle2; break;
+
+                    case 7:
+                        labelTitle.Text = LanguageStrings.FM_E_labelTitle3; break;
+
+                    case 8:
+                        labelTitle.Text = LanguageStrings.FM_E_labelTitle5;
+                        buttonBack.Visible = false;
+                        break;
+                }
             }
         }
 
@@ -125,7 +167,14 @@ namespace vsGUI
 
                     case 3: //Form Settings
 
-                        labelTitle.Text = "W E L C O M E";
+                        if (GlobalValue.globalLanguage)
+                        {
+                            labelTitle.Text = LanguageStrings.FM_C_labelTitle1;
+                        }
+                        else
+                        {
+                            labelTitle.Text = LanguageStrings.FM_E_labelTitle1;
+                        }
                         currentForm.Close();
                         buttonBack.Visible = false;
                         break;
@@ -136,20 +185,41 @@ namespace vsGUI
 
                     case 6: //C-3
 
-                        labelTitle.Text = "Classic cocktails";
+                        if (GlobalValue.globalLanguage)
+                        {
+                            labelTitle.Text = LanguageStrings.FM_C_labelTitle2;
+                        }
+                        else
+                        {
+                            labelTitle.Text = LanguageStrings.FM_E_labelTitle2;
+                        }
                         GlobalValue.globalFormNumber = 1;
                         OpenForm(new FormClassic(), sender);
                         break;
 
                     case 7: //D
 
-                        labelTitle.Text = "Design your own";
+                        if (GlobalValue.globalLanguage)
+                        {
+                            labelTitle.Text = LanguageStrings.FM_C_labelTitle3;
+                        }
+                        else
+                        {
+                            labelTitle.Text = LanguageStrings.FM_E_labelTitle3;
+                        }
                         GlobalValue.globalFormNumber = 2;
                         OpenForm(new FormDesign(), sender);
                         break;
 
                     default:
-                        labelTitle.Text = "W E L C O M E";
+                        if (GlobalValue.globalLanguage)
+                        {
+                            labelTitle.Text = LanguageStrings.FM_C_labelTitle1;
+                        }
+                        else
+                        {
+                            labelTitle.Text = LanguageStrings.FM_E_labelTitle1;
+                        }
                         currentForm.Close();
                         buttonBack.Visible = false;
                         break;
@@ -158,6 +228,7 @@ namespace vsGUI
                 DisableButton();
                 currentButton = null;
             }
+            SetLabelInfoLanguage();
             buttonBack.BackColor = Color.FromArgb(178, 216, 233);
         }
 
@@ -165,18 +236,21 @@ namespace vsGUI
         {
             GlobalValue.globalFormNumber = 1;
             OpenForm(new FormClassic(), sender);
+            SetLabelInfoLanguage();
         }
 
         private void buttonDesign_Click(object sender, EventArgs e)
         {
             GlobalValue.globalFormNumber = 2;
             OpenForm(new FormDesign(), sender);
+            SetLabelInfoLanguage();
         }
 
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             GlobalValue.globalFormNumber = 3;
             OpenForm(new FormSettings(), sender);
+            SetLabelInfoLanguage();
         }
     }
 }

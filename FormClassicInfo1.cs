@@ -40,7 +40,7 @@ namespace vsGUI
         {
             if (GlobalValue.globalIsPortOpening == true)
             {
-                GlobalMethod.PortSend("1");
+                GlobalMethod.PortSend("FormClassicInfo1");
             }
             else
             {

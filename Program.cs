@@ -46,8 +46,8 @@ namespace vsGUI
         public static string globalPortNameSet;
         public static bool globalIsPortOpening;
 
-        // 0 = EN, 1 = CN
-        public static int globalLanguage = 0;
+        // false = EN, true = CN
+        public static bool globalLanguage = false;
     }
 
     //所有的自创方法都写这个类下就行
@@ -70,7 +70,7 @@ namespace vsGUI
                 GlobalValue.globalPortNameSet = GlobalValue.globalPortName.First();}
             serial_.PortName = GlobalValue.globalPortNameSet;
             serial_.Open();
-            serial_.BaudRate = 115200;
+            serial_.BaudRate = 9600;
             serial_.DataBits = 8;
             serial_.StopBits = StopBits.One;
             serial_.Parity   = Parity.None;
