@@ -60,9 +60,8 @@ namespace vsGUI
 
         public static void LoadPort()
         {
-            //SerialPort serial_ = new SerialPort();
             serial_.Close();
-            if (GlobalValue.globalPortNameSet == null){
+            if (GlobalValue.globalPortNameSet == null || GlobalValue.globalPortNameSet.Length == 0){
                 GlobalValue.globalPortNameSet = GlobalValue.globalPortName.First();}
             serial_.PortName = GlobalValue.globalPortNameSet;
             serial_.Open();

@@ -17,6 +17,13 @@ namespace vsGUI
         public FormClassic()
         {
             InitializeComponent();
+
+            if (GlobalValue.globalLanguage)
+            {
+                buttonC1.Text = "龙舌兰日出";
+                buttonC2.Text = "蓝色夏威夷";
+                buttonC3.Text = "长岛冰茶";
+            }
         }
 
         //When click the button, the corresponding childForm will be displayed.

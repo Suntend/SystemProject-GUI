@@ -111,3 +111,6 @@ Log
 
   2023.02.16  Multi-language switch.
               中英文切换。
+
+  2023.02.17  Refactor the page layout and code logic of the Settings Form.
+              重构设置页的页面布局与业务逻辑。

@@ -15,80 +15,67 @@ namespace vsGUI
         public FormSettings()
         {
             InitializeComponent();
+            labelPortBtnInfoCN.Visible = false;
+            labelPortBtnInfoEN.Visible = false;
+            SetControlsLanguage();
+            SetButtonLanguageIndex();
+            SetButtonPort();
 
-            comboBoxPort.Visible        = false;
-            buttonPortOpenClose.Visible = false;
-            labelNoPortWarn.Visible     = false;
-            labelPortNameCOM.Visible    = false;
-
-            if (GlobalValue.globalLanguage)
-            {
-                labelPortName.Text = "端口：";
-                labelNoPortWarn.Text = "没有端口！";
-                labelMore.Text = "探索更多：";
-                buttonToO.Text = "官方网站 >";
-                buttonToG.Text = "Github >";
-                buttonToB.Text = "联系作者 >";
-            }
-
-            buttonLanguageSet();
-            buttonPortSet();
-
-            //获取端口列表，判断状态防止open时load
-            //当没开端口时
-            if (GlobalValue.globalIsPortOpening == false)
+            //当没打开端口时
+            if (GlobalValue.globalIsPortOpening == false )
             {
                 GlobalMethod.GetPort();
 
-                //判断是否为空
+                //没开 且 有可用端口时
                 if (GlobalValue.globalPortName.Length != 0 && GlobalValue.globalPortName != null)
                 {
-                    //遍历写入控件
-                    foreach (string s in GlobalValue.globalPortName)
-                    {
-                        comboBoxPort.Items.Add(s);
-                    }
-                    //添加默认索引，不然丑
-                    comboBoxPort.SelectedIndex = 0;
-
-                    comboBoxPort.Visible = true;
-                    buttonPortOpenClose.Visible = true;
+                    InitComboBox();
                     labelNoPortWarn.Visible = false;
                     labelPortNameCOM.Visible = false;
-                    buttonPortSet();
+                    SetPortInfoVisible();
                 }
+                //没开 且 没有可用端口
                 else
                 {
-                    //MessageBox.Show("No Port!");
                     comboBoxPort.Visible = false;
                     buttonPortOpenClose.Visible = false;
-                    labelNoPortWarn.Visible = true;
                     labelPortNameCOM.Visible = false;
                 }
             }
-            //若已经打开了端口
-            else if (GlobalValue.globalIsPortOpening == true)
+            //已经打开了端口
+            else
             {
-                comboBoxPort.Visible = false;
-                buttonPortOpenClose.Visible = true;
-                labelNoPortWarn.Visible = false;
                 labelPortNameCOM.Text = GlobalValue.globalPortNameSet;
-                labelPortNameCOM.Visible = true;
+                comboBoxPort.Visible = false;
+                labelNoPortWarn.Visible = false;
+                SetPortInfoVisible();
             }
-            
+        }
+
+        private void InitComboBox()
+        {
+            comboBoxPort.Items.Clear();
+            //遍历写入控件
+            foreach (string s in GlobalValue.globalPortName)
+            {
+                comboBoxPort.Items.Add(s);
+            }
+            //添加默认索引，不然丑
+            comboBoxPort.SelectedIndex = 0;
         }
 
         private void comboBoxPort_SelectedIndexChanged(object sender, EventArgs e)
         {
             //获取当前选中端口
             GlobalValue.globalPortNameSet = comboBoxPort.SelectedItem.ToString();
-            GlobalMethod.LoadPort();
+            //GlobalMethod.LoadPort();
         }
 
         private void buttonPortOpenClose_Click(object sender, EventArgs e)
         {
             if (GlobalValue.globalIsPortOpening == false)
             {
+                GlobalMethod.LoadPort();
                 GlobalMethod.OpenPort();
                 comboBoxPort.Visible = false;
                 labelPortNameCOM.Text = GlobalValue.globalPortNameSet;
@@ -97,14 +84,16 @@ namespace vsGUI
             else if (GlobalValue.globalIsPortOpening == true)
             {
                 GlobalMethod.ClosePort();
-                comboBoxPort.Visible = true;
                 labelPortNameCOM.Visible = false;
+                comboBoxPort.Visible = true;
+                InitComboBox();
             }
-            buttonPortSet();
+
+            SetButtonPort();
         }
 
-        //开关按钮 换字换色
-        private void buttonPortSet()
+        //端口开关按钮 换字换色
+        private void SetButtonPort()
         {
             if (GlobalValue.globalIsPortOpening == true)
             {
@@ -112,16 +101,14 @@ namespace vsGUI
                 if (GlobalValue.globalLanguage)
                 {
                     buttonPortOpenClose.Text = "已开启";
-                    labelPortBtnInfoEN.Visible = false;
-                    labelPortBtnInfoCN.Visible = true;
+                    SetPortInfoVisible();
                 }
                 else
                 {
                     buttonPortOpenClose.Text = "Opening";
-                    labelPortBtnInfoEN.Visible = true;
-                    labelPortBtnInfoCN.Visible = false;
-                } 
-                    
+                    SetPortInfoVisible();
+                }
+
             }
             else if (GlobalValue.globalIsPortOpening == false)
             {
@@ -129,18 +116,84 @@ namespace vsGUI
                 if (GlobalValue.globalLanguage)
                 {
                     buttonPortOpenClose.Text = "已关闭";
-                    labelPortBtnInfoEN.Visible = false;
-                    labelPortBtnInfoCN.Visible = true;
+                    SetPortInfoVisible();
                 }
                 else
                 {
                     buttonPortOpenClose.Text = "Closed";
-                    labelPortBtnInfoEN.Visible = true;
-                    labelPortBtnInfoCN.Visible = false;
+                    SetPortInfoVisible();
                 }
             }
         }
 
+        private void SetPortToOpen()
+        {
+
+        }
+
+        private void SetPortToClose()
+        {
+
+        }
+
+        //设置控件中文
+        private void SetControlsLanguage()
+        {
+            if (GlobalValue.globalLanguage)
+            {
+                labelPortName.Text = "端口：";
+                labelNoPortWarn.Text = "没有端口！";
+                labelTemp.Text = "温度：";
+                labelMore.Text = "探索更多：";
+                buttonToO.Text = "官方网站 >";
+                buttonToG.Text = "Github >";
+                buttonToB.Text = "联系作者 >";
+                labelLangBtnInfo.Text = "刷新页面以确认切换语言";
+            }
+            else
+            {
+                labelPortName.Text = "Port Name :";
+                labelNoPortWarn.Text = "No Port !";
+                labelTemp.Text = "Temperature :";
+                labelMore.Text = "Explore More :";
+                buttonToO.Text = "Official Website >";
+                buttonToG.Text = "Browse in Github >";
+                buttonToB.Text = "Contact Author >";
+                labelLangBtnInfo.Text = "Refresh the page to confirm switching language";
+            }
+        }
+
+        //端口介绍组件设置可见性
+        private void SetPortInfoVisible()
+        {
+            if (GlobalValue.globalLanguage)
+            {
+                labelPortBtnInfoCN.Visible = true;
+                labelPortBtnInfoEN.Visible = false;
+            }
+            else
+            {
+                labelPortBtnInfoCN.Visible = false;
+                labelPortBtnInfoEN.Visible = true;
+            }
+        }
+
+        //设置2选1按钮的选择情况
+        private void SetButtonLanguageIndex()
+        {
+            if (GlobalValue.globalLanguage == false)
+            {
+                radioButtonEN.Checked = true;
+                radioButtonCN.Checked = false;
+            }
+            else if (GlobalValue.globalLanguage == true)
+            {
+                radioButtonEN.Checked = false;
+                radioButtonCN.Checked = true;
+            }
+        }
+
+        //当按下按钮，即更改语言生效
         private void buttonLanguage_Click(object sender, EventArgs e)
         {
             if (radioButtonCN.Checked)
@@ -153,21 +206,8 @@ namespace vsGUI
                 GlobalValue.globalLanguage = false;
                 MessageBox.Show("Switched to English!");
             }
-            buttonLanguageSet();
-        }
-
-        private void buttonLanguageSet()
-        {
-            if (GlobalValue.globalLanguage == false)
-            {
-                radioButtonEN.Checked = true;
-                radioButtonCN.Checked = false;
-            }
-            else if (GlobalValue.globalLanguage == true)
-            {
-                radioButtonEN.Checked = false;
-                radioButtonCN.Checked = true;
-            }
+            SetControlsLanguage();
+            SetButtonPort();
         }
 
         private void buttonToO_Click(object sender, EventArgs e)

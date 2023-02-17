@@ -26,8 +26,8 @@ namespace vsGUI
         public static string FM_C_labelTitle4 = "设 置";
         public static string FM_C_labelTitle5 = "制 作 中";
 
-        public static string FM_C_buttonClassic  = "经典";
-        public static string FM_C_buttonDesign   = "设计";
-        public static string FM_C_buttonSettings = "设置";
+        public static string FM_C_buttonClassic  = " 经典";
+        public static string FM_C_buttonDesign   = " 设计";
+        public static string FM_C_buttonSettings = " 设置";
     }
 }
