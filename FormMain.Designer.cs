@@ -41,11 +41,12 @@ namespace vsGUI
             this.buttonBack = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
             this.panelForm = new System.Windows.Forms.Panel();
+            this.labelInfoCN = new System.Windows.Forms.Label();
             this.labelInfoEN = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelInfoCN = new System.Windows.Forms.Label();
+            this.buttonYes = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -169,6 +170,7 @@ namespace vsGUI
             // panelTitle
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(233)))));
+            this.panelTitle.Controls.Add(this.buttonYes);
             this.panelTitle.Controls.Add(this.buttonBack);
             this.panelTitle.Controls.Add(this.labelTitle);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -216,6 +218,16 @@ namespace vsGUI
             this.panelForm.Size = new System.Drawing.Size(584, 386);
             this.panelForm.TabIndex = 2;
             // 
+            // labelInfoCN
+            // 
+            this.labelInfoCN.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelInfoCN.Location = new System.Drawing.Point(77, 50);
+            this.labelInfoCN.Name = "labelInfoCN";
+            this.labelInfoCN.Size = new System.Drawing.Size(444, 195);
+            this.labelInfoCN.TabIndex = 4;
+            this.labelInfoCN.Text = "智能调酒机器人最初的设计目的是能够根据顾客的口味制作特定的鸡尾酒。既能完美满足不同顾客的口味，又能将调酒师从繁琐的工作中解放出来。\r\n\r\n机器人可以完成给定的鸡尾" +
+    "酒任务，准确添加每种成分以确保每次都具有相同的高质量。";
+            // 
             // labelInfoEN
             // 
             this.labelInfoEN.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -231,7 +243,6 @@ namespace vsGUI
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Location = new System.Drawing.Point(497, 299);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(75, 75);
@@ -243,7 +254,6 @@ namespace vsGUI
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Location = new System.Drawing.Point(376, 299);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(115, 75);
@@ -255,22 +265,24 @@ namespace vsGUI
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(295, 299);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 75);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // labelInfoCN
+            // buttonYes
             // 
-            this.labelInfoCN.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelInfoCN.Location = new System.Drawing.Point(77, 50);
-            this.labelInfoCN.Name = "labelInfoCN";
-            this.labelInfoCN.Size = new System.Drawing.Size(444, 195);
-            this.labelInfoCN.TabIndex = 4;
-            this.labelInfoCN.Text = "智能调酒机器人最初的设计目的是能够根据顾客的口味制作特定的鸡尾酒。既能完美满足不同顾客的口味，又能将调酒师从繁琐的工作中解放出来。\r\n\r\n机器人可以完成给定的鸡尾" +
-    "酒任务，准确添加每种成分以确保每次都具有相同的高质量。";
+            this.buttonYes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonYes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonYes.FlatAppearance.BorderSize = 0;
+            this.buttonYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonYes.Image = ((System.Drawing.Image)(resources.GetObject("buttonYes.Image")));
+            this.buttonYes.Location = new System.Drawing.Point(509, 0);
+            this.buttonYes.Name = "buttonYes";
+            this.buttonYes.Size = new System.Drawing.Size(75, 75);
+            this.buttonYes.TabIndex = 2;
+            this.buttonYes.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
@@ -318,6 +330,7 @@ namespace vsGUI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelInfoEN;
         private System.Windows.Forms.Label labelInfoCN;
+        private System.Windows.Forms.Button buttonYes;
     }
 }
 

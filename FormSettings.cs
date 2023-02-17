@@ -224,5 +224,10 @@ namespace vsGUI
         {
             System.Diagnostics.Process.Start("https://space.bilibili.com/340532672");
         }
+
+        private void UpdateTemp(object sender, EventArgs e)
+        {
+            labelTempNum.Text = GlobalValue.globalTemperature;
+        }
     }
 }

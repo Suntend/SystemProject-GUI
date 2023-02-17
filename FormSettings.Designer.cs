@@ -29,6 +29,7 @@ namespace vsGUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboBoxPort = new System.Windows.Forms.ComboBox();
             this.labelPortName = new System.Windows.Forms.Label();
             this.buttonPortOpenClose = new System.Windows.Forms.Button();
@@ -48,11 +49,12 @@ namespace vsGUI
             this.labelPortBtnInfoEN = new System.Windows.Forms.Label();
             this.labelNoPortWarn = new System.Windows.Forms.Label();
             this.panelLanguage = new System.Windows.Forms.Panel();
+            this.labelLangBtnInfo = new System.Windows.Forms.Label();
             this.buttonLanguage = new System.Windows.Forms.Button();
             this.radioButtonCN = new System.Windows.Forms.RadioButton();
             this.radioButtonEN = new System.Windows.Forms.RadioButton();
             this.labelLanguage = new System.Windows.Forms.Label();
-            this.labelLangBtnInfo = new System.Windows.Forms.Label();
+            this.timerUpdateTemp = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panelMore.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -290,6 +292,17 @@ namespace vsGUI
             this.panelLanguage.Size = new System.Drawing.Size(568, 80);
             this.panelLanguage.TabIndex = 9;
             // 
+            // labelLangBtnInfo
+            // 
+            this.labelLangBtnInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelLangBtnInfo.AutoSize = true;
+            this.labelLangBtnInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelLangBtnInfo.Location = new System.Drawing.Point(180, 50);
+            this.labelLangBtnInfo.Name = "labelLangBtnInfo";
+            this.labelLangBtnInfo.Size = new System.Drawing.Size(106, 17);
+            this.labelLangBtnInfo.TabIndex = 6;
+            this.labelLangBtnInfo.Text = "labelLangBtnInfo";
+            // 
             // buttonLanguage
             // 
             this.buttonLanguage.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -343,16 +356,10 @@ namespace vsGUI
             this.labelLanguage.TabIndex = 0;
             this.labelLanguage.Text = "Language / 语言 :";
             // 
-            // labelLangBtnInfo
+            // timerUpdateTemp
             // 
-            this.labelLangBtnInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelLangBtnInfo.AutoSize = true;
-            this.labelLangBtnInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelLangBtnInfo.Location = new System.Drawing.Point(180, 50);
-            this.labelLangBtnInfo.Name = "labelLangBtnInfo";
-            this.labelLangBtnInfo.Size = new System.Drawing.Size(106, 17);
-            this.labelLangBtnInfo.TabIndex = 6;
-            this.labelLangBtnInfo.Text = "labelLangBtnInfo";
+            this.timerUpdateTemp.Enabled = true;
+            this.timerUpdateTemp.Tick += new System.EventHandler(this.UpdateTemp);
             // 
             // FormSettings
             // 
@@ -401,5 +408,6 @@ namespace vsGUI
         private System.Windows.Forms.Label labelTempNum;
         private System.Windows.Forms.Label labelTemp;
         private System.Windows.Forms.Label labelLangBtnInfo;
+        private System.Windows.Forms.Timer timerUpdateTemp;
     }
 }

@@ -9,26 +9,12 @@ namespace vsGUI
 {
     static class Program
     {
-        /// <summary>
-        /// Name:  Mingchen Xu
-        /// HW ID: H00365035
-        /// 
-        /// 姓名：许铭宸
-        /// 学号：20012100080
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            /// <summary>
-            /// If I have created a new window class(MyForm.cs):
-            ///     class MyForm : Form { }
-            /// then i need(Program.cs):
-            ///     MyForm form = new MyForm();
-            ///     Application.Run(form);
-            /// </summary>
             Application.Run(new FormMain());
         }
     }
@@ -38,12 +24,16 @@ namespace vsGUI
         //Used to represent the current window ID.
         public static int globalFormNumber;
 
-        public static string[] globalPortName;
-        public static string globalPortNameSet;
-        public static bool globalIsPortOpening;
-
         // false = EN, true = CN
         public static bool globalLanguage = false;
+
+        public static string[] globalPortName;
+        public static string globalPortNameSet;
+        public static bool globalIsPortOpening = false;
+
+        public static string globalTemperature;
+        public static string globalCocktailCode;
+        public static bool globalBartending = false;
     }
 
     //所有的自创方法都写这个类下就行
@@ -81,14 +71,29 @@ namespace vsGUI
             serial_.Close();
             serial_.Open();
             GlobalValue.globalIsPortOpening = true;
-            MessageBox.Show(serial_.PortName + " opening!");
+            if (GlobalValue.globalLanguage)
+            {
+                MessageBox.Show(serial_.PortName + " 已打开！");
+            }
+            else
+            {
+                MessageBox.Show(serial_.PortName + " opening!");
+            }
+            
         }
 
         public static void ClosePort()
         {
             serial_.Close();
             GlobalValue.globalIsPortOpening = false;
-            MessageBox.Show(serial_.PortName + " closed!");
+            if (GlobalValue.globalLanguage)
+            {
+                MessageBox.Show(serial_.PortName + " 已关闭！");
+            }
+            else
+            {
+                MessageBox.Show(serial_.PortName + " closed!");
+            }
         }
 
         public static void PortSend(string send)
@@ -100,11 +105,48 @@ namespace vsGUI
         {
             SerialPort serial = (SerialPort)sender;
             string s = serial.ReadExisting();
-            MessageBox.Show(s);
 
-            
+            if (s.Length != 0 && s != null)
+            {
+                string ss = s.Substring(0, 1);
 
-            //throw new NotImplementedException();
+                if (ss == "t")
+                {
+                    GlobalValue.globalTemperature = s.Substring(1);
+                }
+                else if (ss == "y")
+                {
+                    //checkP = true
+                    GlobalValue.globalBartending = true;
+                    PortSend(GlobalValue.globalCocktailCode);
+                }
+                else if (ss == "n")
+                {
+                    //checkP = false
+                    if (GlobalValue.globalLanguage)
+                    {
+                        MessageBox.Show("请放置杯子后重试！");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please place the cup and try again!");
+                    }
+                }
+                else if (ss == "d")
+                {
+                    //done
+                    GlobalValue.globalBartending = false;
+                    if (GlobalValue.globalLanguage)
+                    {
+                        MessageBox.Show("完成！");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Done!");
+                    }
+                    Application.Restart();
+                }
+            }
         }
     }
 }

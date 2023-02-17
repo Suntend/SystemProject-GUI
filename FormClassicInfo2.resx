@@ -127,10 +127,10 @@ Ingredients:  Pineapple Juice (20ml)
 Price:             £3</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonYes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAL1JREFUSEvt0j0KwyAUwPFsdpKOmR2kk3PICYoHcO6FhOAFPErHkqlH8BgdU58o
+        wgAADsIBFShKgAAAAL1JREFUSEvt0j0KwyAUwPFsdpKOmR2kk3PICYoHcO6FhOAFPErHkqlH8BgdU58o
         hJDWFnyZ3g8emLzhTz46Qsg/QggnKeWklJrgnG/jglD0iMcFxlo7pAWmbVQIcU8LTHvR6JyWWCialr/y
         3vfzPPf5sqpJ1Dl3YYy9YLTW13z7o2avF54WovG41OLNvynEanG0H+lbHC1a7MXRo8U2zjl/whkGLVqs
         42XQo8U6fli0MMYM4zjeDo0SQuq67g2Trq1VyAwldAAAAABJRU5ErkJggg==

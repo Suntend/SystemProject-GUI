@@ -6,6 +6,16 @@
 |                                        |
 ------------------------------------------
 
+* The content of this public warehouse is only for course acceptance demonstration!
+* Any form of copying is prohibited except for learning purposes!
+*
+* 本公开仓库内容仅供课程验收演示！
+* 除学习目的，禁止任何形式的复制！
+*
+* System design - 系统设计 - B39VS
+
+
+
 
 
 Basic Info
@@ -25,19 +35,29 @@ Basic Info
 
 
 
+
+
 Introduction of highlights and precautions
 
-  +1 Adaptive page layout.
-     自适应页面布局。
+  + Adaptive page layout.
+    自适应布局。
 
-  +2 Use Git for project collaboration and version control.
-     使用Git进行项目协同与版本控制。
+  + Multi-threading technology.(Cancel)
+    多线程技术。（取消）
 
-  +3 Multilingual switching.(EN/CN)
-     多语言切换。（中文/英文）
+  + Multi-language switching.(EN/CN)
+    多语言切换。（中文/英文）
 
-  -1 If there are only two serial ports and the receiver occupied a serial port, the program may be down.
-     如果仅有两个串口，且接收端已经占用了其中一个串口，程序会出错。
+  + Use Git for project collaboration and version control.
+    使用Git进行项目协同与版本控制。
+
+  +++ Project-oriented development, not curriculum-oriented development.
+      "面向 项目 开发"，而不是 "面向 课设 开发"。
+
+  ! If there are only two serial ports and the receiver occupied a serial port, the program may be down.
+    如果仅有两个串口，且接收端已经占用了其中一个串口，程序可能会出错。
+
+
 
 
 
@@ -50,11 +70,13 @@ Cocktails
   5 - Pineapple Juice
   6 - Blue Curacao
 
-  Tequila Sunrise      - 14 42 52
-  Blue Hawaii          - 24 52 62
-  Long Island Iced Tea - 13 33 42
+  Tequila Sunrise      - 144252
+  Blue Hawaii          - 245262
+  Long Island Iced Tea - 133342
 
   Max 80ml
+
+
 
 
 
@@ -70,7 +92,7 @@ Global Value
       | 2 - Design              - Design your own
       | | 7 - Design list       - Check your design
       | 3 - Settings            - Settings
-      | 8 - Bartending / Finish -
+      | 8 - Bartending / Finish *
 
   GlobalValue.globalLanguage (bool)
     Used to represent the current language.
@@ -79,7 +101,11 @@ Global Value
 
 
 
+
+
 Serial communication
+
+
 
 
 
@@ -92,18 +118,18 @@ Log
   2023.02.07  UI - Main / Classic.C1.C2.C3. / BF Form are finished.
               页面设计：完成了以上六个页面。
 
-  2023.02.08  Serial communication - Send test, successful.
+  2023.02.08  Serial communication: Send test, successful.
               串口通信：完成发送测试。
 
-  2023.02.09  Serial communication - Receive test, successful.
+  2023.02.09  Serial communication: Receive test, successful.
               串口通信：完成接收测试。
 
   2023.02.13  First meet class.
-              Serial communication - Complete the serial port status judgment and detection.
+              Serial communication: Complete the serial port status judgment and detection.
               第一次见面课。
               串口通信：完成串口状态判断与检测。
 
-  2023.02.14  Serial communication - Improve the serial port loading mechanism.
+  2023.02.14  Serial communication: Improve the serial port loading mechanism.
               串口通信：完善串口加载机制。
 
   2023.02.15  Multi-language switch.
@@ -113,4 +139,6 @@ Log
               中英文切换。
 
   2023.02.17  Refactor the page layout and code logic of the Settings Form.
+              Serial communication: Improve communication with Arduino.
               重构设置页的页面布局与业务逻辑。
+              串口通信：完善与Arduino通信业务。

@@ -22,6 +22,7 @@ namespace vsGUI
 
             GlobalValue.globalFormNumber = 0;
             buttonBack.Visible = false;
+            buttonYes.Visible = false;
 
             SetLabelInfoLanguage();
         }
@@ -155,7 +156,7 @@ namespace vsGUI
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            if (currentForm != null)
+            if (currentForm != null && GlobalValue.globalBartending == false)
             {
                 switch (GlobalValue.globalFormNumber)
                 {
@@ -228,29 +229,83 @@ namespace vsGUI
                 DisableButton();
                 currentButton = null;
             }
+            else if (GlobalValue.globalBartending)
+            {
+                if (GlobalValue.globalLanguage)
+                {
+                    labelTitle.Text = "请等待当前任务完成！";
+                }
+                else
+                {
+                    labelTitle.Text = "Please wait for the current task to complete!";
+                }
+            }
+
             SetLabelInfoLanguage();
             buttonBack.BackColor = Color.FromArgb(178, 216, 233);
         }
 
         private void buttonClassic_Click(object sender, EventArgs e)
         {
-            GlobalValue.globalFormNumber = 1;
-            OpenForm(new FormClassic(), sender);
-            SetLabelInfoLanguage();
+            if (GlobalValue.globalBartending)
+            {
+                if (GlobalValue.globalLanguage)
+                {
+                    labelTitle.Text = "请等待当前任务完成！";
+                }
+                else
+                {
+                    labelTitle.Text = "Please wait for the current task to complete!";
+                }
+            }
+            else
+            {
+                GlobalValue.globalFormNumber = 1;
+                OpenForm(new FormClassic(), sender);
+                SetLabelInfoLanguage();
+            }
         }
 
         private void buttonDesign_Click(object sender, EventArgs e)
         {
-            GlobalValue.globalFormNumber = 2;
-            OpenForm(new FormDesign(), sender);
-            SetLabelInfoLanguage();
+            if (GlobalValue.globalBartending)
+            {
+                if (GlobalValue.globalLanguage)
+                {
+                    labelTitle.Text = "请等待当前任务完成！";
+                }
+                else
+                {
+                    labelTitle.Text = "Please wait for the current task to complete!";
+                }
+            }
+            else
+            {
+                GlobalValue.globalFormNumber = 2;
+                OpenForm(new FormDesign(), sender);
+                SetLabelInfoLanguage();
+            }
         }
 
         private void buttonSettings_Click(object sender, EventArgs e)
         {
-            GlobalValue.globalFormNumber = 3;
-            OpenForm(new FormSettings(), sender);
-            SetLabelInfoLanguage();
+            if (GlobalValue.globalBartending)
+            {
+                if (GlobalValue.globalLanguage)
+                {
+                    labelTitle.Text = "请等待当前任务完成！";
+                }
+                else
+                {
+                    labelTitle.Text = "Please wait for the current task to complete!";
+                }
+            }
+            else
+            {
+                GlobalValue.globalFormNumber = 3;
+                OpenForm(new FormSettings(), sender);
+                SetLabelInfoLanguage();
+            }
         }
     }
 }

@@ -152,7 +152,7 @@
     <Content Include="Resources\C1.jpg" />
     <Content Include="Resources\C2.jpg" />
     <Content Include="Resources\C3.jpg" />
-    <Content Include="Resources\icon-back.png" />
+    <Content Include="Resources\icon-back-30.png" />
     <Content Include="Resources\icon-classic.png" />
     <Content Include="Resources\icon-design.png" />
     <Content Include="Resources\icon-minus.png" />
@@ -165,6 +165,7 @@
     <Content Include="README.txt" />
     <None Include="Resources\icon.ico" />
     <Content Include="Resources\logo-HW.png" />
+    <Content Include="Resources\logo-Me.png" />
     <Content Include="Resources\logo-XD.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

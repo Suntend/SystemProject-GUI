@@ -50,9 +50,10 @@ namespace vsGUI
             // 
             // labelBartending
             // 
+            this.labelBartending.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelBartending.AutoSize = true;
             this.labelBartending.Font = new System.Drawing.Font("Microsoft YaHei UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelBartending.Location = new System.Drawing.Point(318, 159);
+            this.labelBartending.Location = new System.Drawing.Point(345, 160);
             this.labelBartending.Name = "labelBartending";
             this.labelBartending.Size = new System.Drawing.Size(202, 35);
             this.labelBartending.TabIndex = 1;
@@ -60,9 +61,10 @@ namespace vsGUI
             // 
             // pictureBoxGIF
             // 
-            this.pictureBoxGIF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxGIF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxGIF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBoxGIF.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGIF.Image")));
-            this.pictureBoxGIF.Location = new System.Drawing.Point(12, 27);
+            this.pictureBoxGIF.Location = new System.Drawing.Point(25, 25);
             this.pictureBoxGIF.Name = "pictureBoxGIF";
             this.pictureBoxGIF.Size = new System.Drawing.Size(300, 300);
             this.pictureBoxGIF.TabIndex = 0;

@@ -15,6 +15,11 @@ namespace vsGUI
         public FormBF()
         {
             InitializeComponent();
+
+            if (GlobalValue.globalLanguage)
+            {
+                labelBartending.Text = "制作中...";
+            }
         }
     }
 }

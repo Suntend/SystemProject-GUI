@@ -46,18 +46,21 @@ namespace vsGUI
         private void buttonC1_Click(object sender, EventArgs e)
         {
             GlobalValue.globalFormNumber = 4;
+            GlobalValue.globalCocktailCode = "144252";
             OpenForm(new FormClassicInfo1(), sender);
         }
 
         private void buttonC2_Click(object sender, EventArgs e)
         {
             GlobalValue.globalFormNumber = 5;
+            GlobalValue.globalCocktailCode = "245262";
             OpenForm(new FormClassicInfo2(), sender);
         }
 
         private void buttonC3_Click(object sender, EventArgs e)
         {
             GlobalValue.globalFormNumber = 6;
+            GlobalValue.globalCocktailCode = "133342";
             OpenForm(new FormClassicInfo3(), sender);
         }
     }
