@@ -51,7 +51,7 @@ Introduction of highlights and precautions
   + Use Git for project collaboration and version control.
     使用Git进行项目协同与版本控制。
 
-  +++ Project-oriented development, not curriculum-oriented development.
+  +++ "Project-oriented" development, not "Curriculum-oriented" development.
       "面向 项目 开发"，而不是 "面向 课设 开发"。
 
   ! If there are only two serial ports and the receiver occupied a serial port, the program may be down.

@@ -228,6 +228,7 @@ namespace vsGUI
         private void UpdateTemp(object sender, EventArgs e)
         {
             labelTempNum.Text = GlobalValue.globalTemperature;
+            Console.WriteLine("Settings: " + GlobalValue.globalTemperature);
         }
     }
 }

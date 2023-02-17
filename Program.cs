@@ -104,7 +104,8 @@ namespace vsGUI
         private static void PortReceived(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPort serial = (SerialPort)sender;
-            string s = serial.ReadExisting();
+            //string s = serial.ReadExisting();
+            string s = serial.ReadLine();
 
             if (s.Length != 0 && s != null)
             {
@@ -113,6 +114,7 @@ namespace vsGUI
                 if (ss == "t")
                 {
                     GlobalValue.globalTemperature = s.Substring(1);
+                    Console.WriteLine("Program: " + s);
                 }
                 else if (ss == "y")
                 {
@@ -144,7 +146,12 @@ namespace vsGUI
                     {
                         MessageBox.Show("Done!");
                     }
-                    Application.Restart();
+
+
+
+
+                    //TODO
+                    //Application.Restart();
                 }
             }
         }

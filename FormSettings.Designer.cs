@@ -359,6 +359,7 @@ namespace vsGUI
             // timerUpdateTemp
             // 
             this.timerUpdateTemp.Enabled = true;
+            this.timerUpdateTemp.Interval = 1000;
             this.timerUpdateTemp.Tick += new System.EventHandler(this.UpdateTemp);
             // 
             // FormSettings
