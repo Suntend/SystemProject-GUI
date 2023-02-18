@@ -29,6 +29,7 @@ namespace vsGUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.buttonSettings = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@ namespace vsGUI
             this.labelLogo = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelTitle = new System.Windows.Forms.Panel();
+            this.buttonYes = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
             this.panelForm = new System.Windows.Forms.Panel();
@@ -46,7 +48,8 @@ namespace vsGUI
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonYes = new System.Windows.Forms.Button();
+            this.timerListener = new System.Windows.Forms.Timer(this.components);
+            this.labelTime = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -179,6 +182,19 @@ namespace vsGUI
             this.panelTitle.Size = new System.Drawing.Size(584, 75);
             this.panelTitle.TabIndex = 1;
             // 
+            // buttonYes
+            // 
+            this.buttonYes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonYes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonYes.FlatAppearance.BorderSize = 0;
+            this.buttonYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonYes.Image = ((System.Drawing.Image)(resources.GetObject("buttonYes.Image")));
+            this.buttonYes.Location = new System.Drawing.Point(509, 0);
+            this.buttonYes.Name = "buttonYes";
+            this.buttonYes.Size = new System.Drawing.Size(75, 75);
+            this.buttonYes.TabIndex = 2;
+            this.buttonYes.UseVisualStyleBackColor = true;
+            // 
             // buttonBack
             // 
             this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -207,6 +223,7 @@ namespace vsGUI
             // 
             // panelForm
             // 
+            this.panelForm.Controls.Add(this.labelTime);
             this.panelForm.Controls.Add(this.labelInfoCN);
             this.panelForm.Controls.Add(this.labelInfoEN);
             this.panelForm.Controls.Add(this.pictureBox3);
@@ -271,18 +288,22 @@ namespace vsGUI
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // buttonYes
+            // timerListener
             // 
-            this.buttonYes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonYes.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonYes.FlatAppearance.BorderSize = 0;
-            this.buttonYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonYes.Image = ((System.Drawing.Image)(resources.GetObject("buttonYes.Image")));
-            this.buttonYes.Location = new System.Drawing.Point(509, 0);
-            this.buttonYes.Name = "buttonYes";
-            this.buttonYes.Size = new System.Drawing.Size(75, 75);
-            this.buttonYes.TabIndex = 2;
-            this.buttonYes.UseVisualStyleBackColor = true;
+            this.timerListener.Enabled = true;
+            this.timerListener.Interval = 1000;
+            this.timerListener.Tick += new System.EventHandler(this.MainFormListener);
+            // 
+            // labelTime
+            // 
+            this.labelTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelTime.AutoSize = true;
+            this.labelTime.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelTime.Location = new System.Drawing.Point(30, 340);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(18, 20);
+            this.labelTime.TabIndex = 5;
+            this.labelTime.Text = "...";
             // 
             // FormMain
             // 
@@ -295,7 +316,7 @@ namespace vsGUI
             this.Controls.Add(this.panelMenu);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(650, 400);
+            this.MinimumSize = new System.Drawing.Size(700, 450);
             this.Name = "FormMain";
             this.Text = "Intelligent cocktail-making system";
             this.panelMenu.ResumeLayout(false);
@@ -305,6 +326,7 @@ namespace vsGUI
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
             this.panelForm.ResumeLayout(false);
+            this.panelForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -331,6 +353,8 @@ namespace vsGUI
         private System.Windows.Forms.Label labelInfoEN;
         private System.Windows.Forms.Label labelInfoCN;
         private System.Windows.Forms.Button buttonYes;
+        private System.Windows.Forms.Timer timerListener;
+        private System.Windows.Forms.Label labelTime;
     }
 }
 

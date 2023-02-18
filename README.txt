@@ -17,14 +17,15 @@
 
 
 
-
+----------
 Basic Info
+基本信息
 
   HW -   H00365035   - Mingchen Xu
   XD -  20012100080  - 许铭宸
 
   Project started at - 2023.02.06
-  Txt last edited at - 2023.02.14  //TODO
+  Txt last edited at - 2023.02.18  //TODO
 
   IDE                - Microsoft Visual Studio Community 2022 (Version 17.4.4)
   Project dependency - .NET Framework 4.8
@@ -36,8 +37,9 @@ Basic Info
 
 
 
-
+------------------------------------------
 Introduction of highlights and precautions
+亮点介绍与注意事项
 
   + Adaptive page layout.
     自适应布局。
@@ -51,6 +53,9 @@ Introduction of highlights and precautions
   + Use Git for project collaboration and version control.
     使用Git进行项目协同与版本控制。
 
+  + Use rigorous and proven state machine logic to minimize state chaos.
+    使用严谨的且经过验证的状态机逻辑，最大程度防止状态混乱。
+
   +++ "Project-oriented" development, not "Curriculum-oriented" development.
       "面向 项目 开发"，而不是 "面向 课设 开发"。
 
@@ -60,8 +65,9 @@ Introduction of highlights and precautions
 
 
 
-
-Cocktails
+---------------------
+Cocktails composition
+鸡尾酒成份
   
   1 - Tequila
   2 - Rum
@@ -70,17 +76,18 @@ Cocktails
   5 - Pineapple Juice
   6 - Blue Curacao
 
-  Tequila Sunrise      - 144252
-  Blue Hawaii          - 245262
-  Long Island Iced Tea - 133342
+  Tequila Sunrise      - 144252 - 1 40ml, 4 20ml, 5 20ml.
+  Blue Hawaii          - 245262 - 2 40ml, 5 20ml, 6 20ml.
+  Long Island Iced Tea - 133342 - 1 30ml, 3 30ml, 4 20ml.
 
   Max 80ml
 
 
 
 
-
+------------
 Global Value
+全局变量
 
   GlobalValue.globalFormNumber (int)
     Used to represent the current window ID.
@@ -102,15 +109,38 @@ Global Value
 
 
 
-
+--------------------
 Serial communication
+串口通信
+  
+  (GUI)
+  Send "checkP"
+  (Arduino)
+  LED Green off
+  LED Red off
+  Check Press
+    If true,  Send "y"
+    If false, Send "n"
+
+  (GUI)
+  Send "144252"
+  (Arduino)
+  LED Red on
+  Move...
+  Move back to position 0
+  Send "d"
+  LED Red off
+  LED Green on
+
+  (Arduino)
+  Send ("t" + (string)temperature(xxx.x))
 
 
 
 
-
-
+---
 Log
+日志
 
   2023.02.06  UI - Main window.(Deleted)
               页面设计：主页面。（废案）
@@ -142,3 +172,15 @@ Log
               Serial communication: Improve communication with Arduino.
               重构设置页的页面布局与业务逻辑。
               串口通信：完善与Arduino通信业务。
+
+  2023.02.18  Two major businesses: the first part of "Classic Cocktails" and "Design your own".
+              Completed all business logic and verified all serial communication processes.
+              两大部分业务：“经典鸡尾酒”和“DIY鸡尾酒”的第一部分。
+              完成了全部业务逻辑，验证了全部串口通信流程。
+
+
+
+
+----
+Note
+笔记

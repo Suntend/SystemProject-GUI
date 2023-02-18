@@ -34,6 +34,7 @@ namespace vsGUI
         public static string globalTemperature;
         public static string globalCocktailCode;
         public static bool globalBartending = false;
+        public static bool globalDone = false;
     }
 
     //所有的自创方法都写这个类下就行
@@ -146,12 +147,7 @@ namespace vsGUI
                     {
                         MessageBox.Show("Done!");
                     }
-
-
-
-
-                    //TODO
-                    //Application.Restart();
+                    GlobalValue.globalDone = true;
                 }
             }
         }

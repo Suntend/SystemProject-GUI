@@ -307,5 +307,17 @@ namespace vsGUI
                 SetLabelInfoLanguage();
             }
         }
+
+        private void MainFormListener(object sender, EventArgs e)
+        {
+            labelTime.Text = DateTime.Now.ToString();
+
+            if (GlobalValue.globalDone)
+            {
+                GlobalValue.globalDone = false;
+                GlobalValue.globalFormNumber = 0;
+                buttonBack_Click(sender, e);
+            }
+        }
     }
 }

@@ -53,6 +53,7 @@ namespace vsGUI
             {
                 GlobalValue.globalCocktailCode = "133342";
                 GlobalMethod.PortSend("checkP");
+                buttonYes.Visible = false;
 
                 //等待3秒，否则超时
                 for (int i = 0; i < 3; i++)
@@ -63,15 +64,7 @@ namespace vsGUI
                         OpenForm(new FormBF(), sender);
                     }
                 }
-
-                if (GlobalValue.globalLanguage)
-                {
-                    MessageBox.Show("超时，请重试！");
-                }
-                else
-                {
-                    MessageBox.Show("Timed out, please try again!");
-                }
+                buttonYes.Visible = true;
             }
             else
             {
