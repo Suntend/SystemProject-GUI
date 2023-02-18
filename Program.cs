@@ -115,7 +115,6 @@ namespace vsGUI
                 if (ss == "t")
                 {
                     GlobalValue.globalTemperature = s.Substring(1);
-                    Console.WriteLine("Program: " + s);
                 }
                 else if (ss == "y")
                 {
