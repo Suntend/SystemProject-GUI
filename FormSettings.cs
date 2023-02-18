@@ -126,16 +126,6 @@ namespace vsGUI
             }
         }
 
-        private void SetPortToOpen()
-        {
-
-        }
-
-        private void SetPortToClose()
-        {
-
-        }
-
         //设置控件中文
         private void SetControlsLanguage()
         {
