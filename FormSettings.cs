@@ -219,7 +219,7 @@ namespace vsGUI
 
         private void buttonToO_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.baidu.com/");
+            System.Diagnostics.Process.Start("https://icms.jamsg.cn");
         }
 
         private void buttonToG_Click(object sender, EventArgs e)
