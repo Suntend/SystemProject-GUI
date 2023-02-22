@@ -180,7 +180,13 @@ Log
               两大部分业务：“经典鸡尾酒”和“DIY鸡尾酒”的第一部分：
               完成了全部业务逻辑，验证了全部串口通信流程。
 
-  2023.02.21  添加语音播报功能。
+  2023.02.21  Added voice broadcast function.
+              添加语音播报功能。
+
+  2023.02.22  Two major businesses: the second part of "Classic Cocktails" and "Design your own":
+              Completed all business logic and verified all serial communication processes.
+              两大部分业务：“经典鸡尾酒”和“DIY鸡尾酒”的第二部分：
+              完成了全部业务逻辑，验证了全部串口通信流程。
 
 
 
