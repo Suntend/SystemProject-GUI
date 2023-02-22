@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
+using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,7 +32,7 @@ namespace vsGUI
         public static string globalPortNameSet;
         public static bool globalIsPortOpening = false;
 
-        public static string globalTemperature;
+        public static string globalTemperature = "0";
         public static string globalCocktailCode;
         public static bool globalBartending = false;
         public static bool globalDone = false;
@@ -137,7 +138,14 @@ namespace vsGUI
                 else if (ss == "d")
                 {
                     //done
+                    SoundPlayer soundPlayer = new SoundPlayer();
+                    soundPlayer.SoundLocation = @"D:\vsProject\vsGUI\Resources\levelup.wav";
+                    soundPlayer.Load();
+                    soundPlayer.Play();
+
                     GlobalValue.globalBartending = false;
+                    GlobalValue.globalDone = true;
+
                     if (GlobalValue.globalLanguage)
                     {
                         MessageBox.Show("完成！");
@@ -146,7 +154,6 @@ namespace vsGUI
                     {
                         MessageBox.Show("Done!");
                     }
-                    GlobalValue.globalDone = true;
                 }
             }
         }

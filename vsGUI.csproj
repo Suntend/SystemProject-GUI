@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -162,6 +163,11 @@
     <Content Include="Resources\icon-yes.png" />
     <Content Include="Resources\icon.png" />
     <Content Include="README.txt" />
+    <Content Include="Resources\levelup.wav" />
+    <Content Include="Resources\SwitchToCN.wav" />
+    <Content Include="Resources\SwitchToEN.wav" />
+    <Content Include="Resources\TempTooHighCN.wav" />
+    <Content Include="Resources\TempTooHighEN.wav" />
     <None Include="Resources\icon.ico" />
     <Content Include="Resources\logo-HW.png" />
     <Content Include="Resources\logo-Me.png" />

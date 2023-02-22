@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Devices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +14,8 @@ namespace vsGUI
 {
     public partial class FormSettings : Form
     {
+        private bool warnTemp = true;
+
         public FormSettings()
         {
             InitializeComponent();
@@ -189,11 +193,24 @@ namespace vsGUI
             if (radioButtonCN.Checked)
             {
                 GlobalValue.globalLanguage = true;
+                
+                SoundPlayer soundPlayer = new SoundPlayer();
+                soundPlayer.SoundLocation = @"D:\vsProject\vsGUI\Resources\SwitchToCN.wav";
+                soundPlayer.Load();
+                soundPlayer.Play();
+
                 MessageBox.Show("已切换为简体中文！");
             }
             else if (radioButtonEN.Checked)
             {
                 GlobalValue.globalLanguage = false;
+                
+                SoundPlayer soundPlayer = new SoundPlayer();
+                soundPlayer.SoundLocation = @"D:\vsProject\vsGUI\Resources\SwitchToEN.wav";
+                Console.WriteLine(Application.StartupPath);
+                soundPlayer.Load();
+                soundPlayer.Play();
+
                 MessageBox.Show("Switched to English!");
             }
             SetControlsLanguage();
@@ -218,6 +235,40 @@ namespace vsGUI
         private void UpdateTemp(object sender, EventArgs e)
         {
             labelTempNum.Text = GlobalValue.globalTemperature;
+            try
+            {
+                double temp = double.Parse(GlobalValue.globalTemperature);
+                if (warnTemp == true && temp > 30.0)
+                {
+                    WarnTemp();
+                }
+            }
+            catch
+            {
+                Console.WriteLine(GlobalValue.globalTemperature);
+            }
+        }
+
+        private void WarnTemp()
+        {
+            warnTemp = false;
+
+            if (GlobalValue.globalLanguage)
+            {
+                SoundPlayer soundPlayer = new SoundPlayer();
+                soundPlayer.SoundLocation = @"D:\vsProject\vsGUI\Resources\TempTooHighCN.wav";
+                Console.WriteLine(Application.StartupPath);
+                soundPlayer.Load();
+                soundPlayer.Play();
+            }
+            else
+            {
+                SoundPlayer soundPlayer = new SoundPlayer();
+                soundPlayer.SoundLocation = @"D:\vsProject\vsGUI\Resources\TempTooHighEN.wav";
+                Console.WriteLine(Application.StartupPath);
+                soundPlayer.Load();
+                soundPlayer.Play();
+            }
         }
     }
 }
