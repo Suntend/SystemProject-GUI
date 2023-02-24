@@ -19,7 +19,7 @@ namespace vsGUI
         {
             InitializeComponent();
 
-            if (GlobalValue.globalLanguage)
+            if (GlobalValue.globalLanguage)  //初始化文本
             {
                 buttonC1.Text = "长岛冰茶";
                 labelInfoEN.Visible = false;
@@ -30,7 +30,7 @@ namespace vsGUI
             }
         }
 
-        //When click the button, the corresponding childForm will be displayed.
+        //打开新窗口
         public void OpenForm(Form childForm, object btnSender)
         {
             if (currentForm != null)
@@ -47,6 +47,7 @@ namespace vsGUI
             childForm.Show();
         }
 
+        //确认键监听
         private void buttonYes_Click(object sender, EventArgs e)
         {
             if (GlobalValue.globalIsPortOpening == true)
@@ -55,7 +56,7 @@ namespace vsGUI
                 GlobalMethod.PortSend("checkP");
                 buttonYes.Visible = false;
 
-                //等待3秒，否则超时
+                //等待3秒，否则超时，需重新点击按钮
                 for (int i = 0; i < 3; i++)
                 {
                     Thread.Sleep(1000);

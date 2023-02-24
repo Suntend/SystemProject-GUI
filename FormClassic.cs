@@ -18,7 +18,7 @@ namespace vsGUI
         {
             InitializeComponent();
 
-            if (GlobalValue.globalLanguage)
+            if (GlobalValue.globalLanguage)  //初始化文本
             {
                 buttonC1.Text = "龙舌兰日出";
                 buttonC2.Text = "蓝色夏威夷";
@@ -26,7 +26,7 @@ namespace vsGUI
             }
         }
 
-        //When click the button, the corresponding childForm will be displayed.
+        //打开新窗口
         private void OpenForm(Form childForm, object btnSender)
         {
             if (currentForm != null)
@@ -43,23 +43,27 @@ namespace vsGUI
             childForm.Show();
         }
 
+        /// <summary>
+        /// 按钮监听，分别对应3种经典鸡尾酒
+        /// button C1~C3
+        /// </summary>
         private void buttonC1_Click(object sender, EventArgs e)
         {
-            GlobalValue.globalFormNumber = 4;
-            GlobalValue.globalCocktailCode = "144252";
-            OpenForm(new FormClassicInfo1(), sender);
+            GlobalValue.globalFormNumber = 4;           //更新状态
+            GlobalValue.globalCocktailCode = "144252";  //将鸡尾酒代码写入全局变量
+            OpenForm(new FormClassicInfo1(), sender);   //打开介绍页面
         }
 
         private void buttonC2_Click(object sender, EventArgs e)
         {
-            GlobalValue.globalFormNumber = 5;
+            GlobalValue.globalFormNumber = 5;           //同上
             GlobalValue.globalCocktailCode = "245262";
             OpenForm(new FormClassicInfo2(), sender);
         }
 
         private void buttonC3_Click(object sender, EventArgs e)
         {
-            GlobalValue.globalFormNumber = 6;
+            GlobalValue.globalFormNumber = 6;           //同上
             GlobalValue.globalCocktailCode = "133342";
             OpenForm(new FormClassicInfo3(), sender);
         }

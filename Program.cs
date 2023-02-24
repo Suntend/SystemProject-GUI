@@ -15,46 +15,48 @@ namespace vsGUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             Application.Run(new FormMain());
         }
     }
 
+    //全局变量
     public static class GlobalValue
     {
-        //Used to represent the current window ID.
-        public static int globalFormNumber;
+        public static int globalFormNumber;                //记录当前窗口ID
 
-        // false = EN, true = CN
-        public static bool globalLanguage = false;
+        public static bool globalLanguage = false;         //false = EN, true = CN.
 
-        public static string[] globalPortName;
-        public static string globalPortNameSet;
-        public static bool globalIsPortOpening = false;
+        public static string[] globalPortName;             //全部的端口名称（数组）
+        public static string globalPortNameSet;            //选择的端口名称
+        public static bool   globalIsPortOpening = false;  //记录端口状态
 
-        public static string globalTemperature = "0";
-        public static string globalCocktailCode;
-        public static bool globalBartending = false;
-        public static bool globalDone = false;
+        public static string globalTemperature   = "0";    //实时温度
+        public static string globalCocktailCode;           //鸡尾酒代码，用于和arduino通信
+        public static bool   globalBartending    = false;  //记录调制状态
+        public static bool   globalDone          = false;  //记录完成状态
     }
 
-    //所有的自创方法都写这个类下就行
+    //全局方法
     public class GlobalMethod
     {
-        static SerialPort serial_ = new SerialPort();
+        static SerialPort serial_ = new SerialPort();  //声明串口
 
-        //获取串口，并写入全局变量
+        //获取全部串口，并写入全局变量
         public static void GetPort()
         {
             string[] portName = SerialPort.GetPortNames();
             GlobalValue.globalPortName = portName;
         }
 
+        //初始化串口
         public static void LoadPort()
         {
             serial_.Close();
+
+            //如果未指定串口，则默认选择第一个串口
             if (GlobalValue.globalPortNameSet == null || GlobalValue.globalPortNameSet.Length == 0){
                 GlobalValue.globalPortNameSet = GlobalValue.globalPortName.First();}
+
             serial_.PortName = GlobalValue.globalPortNameSet;
             serial_.Open();
             serial_.BaudRate = 9600;
@@ -64,15 +66,16 @@ namespace vsGUI
             serial_.ReadTimeout  = 100;
             serial_.WriteTimeout = -1;
             serial_.ReceivedBytesThreshold = 1;
-            serial_.DataReceived += new SerialDataReceivedEventHandler(PortReceived);
+            serial_.DataReceived += new SerialDataReceivedEventHandler(PortReceived);  //注册事件，如果串口收到消息，则调用PortReceived()方法
             serial_.Close();
         }
 
+        //开启串口
         public static void OpenPort()
         {
             serial_.Close();
             serial_.Open();
-            GlobalValue.globalIsPortOpening = true;
+            GlobalValue.globalIsPortOpening = true;  //更新状态
             if (GlobalValue.globalLanguage)
             {
                 MessageBox.Show(serial_.PortName + " 已打开！");
@@ -84,10 +87,11 @@ namespace vsGUI
             
         }
 
+        //关闭串口
         public static void ClosePort()
         {
             serial_.Close();
-            GlobalValue.globalIsPortOpening = false;
+            GlobalValue.globalIsPortOpening = false;  //更新状态
             if (GlobalValue.globalLanguage)
             {
                 MessageBox.Show(serial_.PortName + " 已关闭！");
@@ -98,20 +102,22 @@ namespace vsGUI
             }
         }
 
+        //串口发送
         public static void PortSend(string send)
         {
             serial_.Write(send);
         }
 
+        //串口接收
         private static void PortReceived(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPort serial = (SerialPort)sender;
-            //string s = serial.ReadExisting();
             string s = serial.ReadLine();
 
+            //进行字符串处理
             if (s.Length != 0 && s != null)
             {
-                string ss = s.Substring(0, 1);
+                string ss = s.Substring(0, 1);  //从第0位截取，截取1长度，等于截取首字母
 
                 if (ss == "t")
                 {
@@ -138,13 +144,13 @@ namespace vsGUI
                 else if (ss == "d")
                 {
                     //done
-                    SoundPlayer soundPlayer = new SoundPlayer();
+                    SoundPlayer soundPlayer = new SoundPlayer();  //播放音频
                     soundPlayer.SoundLocation = @"D:\vsProject\vsGUI\Resources\levelup.wav";
                     soundPlayer.Load();
                     soundPlayer.Play();
 
-                    GlobalValue.globalBartending = false;
-                    GlobalValue.globalDone = true;
+                    GlobalValue.globalBartending = false;  //更新状态
+                    GlobalValue.globalDone = true;         //更新状态
 
                     if (GlobalValue.globalLanguage)
                     {

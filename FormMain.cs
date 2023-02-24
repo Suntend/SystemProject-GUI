@@ -17,16 +17,15 @@ namespace vsGUI
 
         public FormMain()
         {
-            //Initialize the window, This code must be loaded first.
-            InitializeComponent();
+            InitializeComponent();  //初始化，必须放在第一行
 
-            GlobalValue.globalFormNumber = 0;
+            GlobalValue.globalFormNumber = 0;  //更新状态
             buttonBack.Visible = false;
             buttonYes.Visible = false;
-
-            SetLabelInfoLanguage();
+            SetLabelInfoLanguage();  //初始化文本
         }
 
+        //设置文本
         private void SetLabelInfoLanguage()
         {
             if (GlobalValue.globalLanguage)
@@ -80,6 +79,7 @@ namespace vsGUI
             }
         }
 
+        //打开新窗口
         private void OpenForm(Form childForm, object btnSender)
         {
             if (currentForm != null)
@@ -96,6 +96,7 @@ namespace vsGUI
             childForm.BringToFront();
             childForm.Show();
 
+            //获取当前窗口状态
             if (GlobalValue.globalLanguage)
             {
                 switch (GlobalValue.globalFormNumber)
@@ -154,6 +155,7 @@ namespace vsGUI
             }
         }
 
+        //返回键监听
         private void buttonBack_Click(object sender, EventArgs e)
         {
             if (currentForm != null && GlobalValue.globalBartending == false)
@@ -241,10 +243,11 @@ namespace vsGUI
                 }
             }
 
-            SetLabelInfoLanguage();
-            buttonBack.BackColor = Color.FromArgb(178, 216, 233);
+            SetLabelInfoLanguage();  //设置文本
+            buttonBack.BackColor = Color.FromArgb(178, 216, 233);  //有bug，按钮背景色会变成黄色，所以手动刷新成原来的颜色
         }
 
+        //进入Classic页面
         private void buttonClassic_Click(object sender, EventArgs e)
         {
             if (GlobalValue.globalBartending)
@@ -260,12 +263,13 @@ namespace vsGUI
             }
             else
             {
-                GlobalValue.globalFormNumber = 1;
-                OpenForm(new FormClassic(), sender);
-                SetLabelInfoLanguage();
+                GlobalValue.globalFormNumber = 1;     //更新状态
+                OpenForm(new FormClassic(), sender);  //打开窗口
+                SetLabelInfoLanguage();               //设置文本
             }
         }
 
+        //进入Design页面
         private void buttonDesign_Click(object sender, EventArgs e)
         {
             if (GlobalValue.globalBartending)
@@ -281,12 +285,13 @@ namespace vsGUI
             }
             else
             {
-                GlobalValue.globalFormNumber = 2;
-                OpenForm(new FormDesign(), sender);
-                SetLabelInfoLanguage();
+                GlobalValue.globalFormNumber = 2;    //更新状态
+                OpenForm(new FormDesign(), sender);  //打开窗口
+                SetLabelInfoLanguage();              //设置文本
             }
         }
 
+        //进入设置页
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             if (GlobalValue.globalBartending)
@@ -302,16 +307,18 @@ namespace vsGUI
             }
             else
             {
-                GlobalValue.globalFormNumber = 3;
-                OpenForm(new FormSettings(), sender);
-                SetLabelInfoLanguage();
+                GlobalValue.globalFormNumber = 3;      //更新状态
+                OpenForm(new FormSettings(), sender);  //打开窗口
+                SetLabelInfoLanguage();                //设置文本
             }
         }
 
+        //主页面timer，用于显示当前时间
         private void MainFormListener(object sender, EventArgs e)
         {
-            labelTime.Text = DateTime.Now.ToString();
+            labelTime.Text = DateTime.Now.ToString();  //显示时间
 
+            //当返回done时，代替手动执行返回首页
             if (GlobalValue.globalDone)
             {
                 GlobalValue.globalDone = false;

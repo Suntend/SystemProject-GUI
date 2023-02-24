@@ -16,7 +16,7 @@ namespace vsGUI
         {
             InitializeComponent();
 
-            if (GlobalValue.globalLanguage)
+            if (GlobalValue.globalLanguage)  //初始化文本
             {
                 labelBartending.Text = "制作中...";
             }

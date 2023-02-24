@@ -25,7 +25,7 @@ Basic Info
   XD -  20012100080  - 许铭宸
 
   Project started at - 2023.02.06
-  Txt last edited at - 2023.02.18  //TODO
+  Txt last edited at - 2023.02.24
 
   IDE                - Microsoft Visual Studio Community 2022 (Version 17.4.4)
   Project dependency - .NET Framework 4.8
@@ -188,6 +188,12 @@ Log
               两大部分业务：“经典鸡尾酒”和“DIY鸡尾酒”的第二部分：
               完成了全部业务逻辑，验证了全部串口通信流程。
 
+  2023.02.23  Add notes.
+              添加注释。
+
+  2023.02.24  Add notes.
+              添加注释。
+
 
 
 
@@ -239,3 +245,8 @@ Note
 
     在相应页面放置 timer 控件，设置 Enabled 和 Interval，添加触发 Tick 行为所要执行的方法。
     每隔 interval 毫秒，触发一次 Tick。
+
+  * 串口通信 - 卡死但不是未响应
+
+    串口注册事件received，每次收到消息时会调用该方法。
+    该方法内可以写字符串处理，可以将获取内容写入变量，但 是 不 能 执 行 更 新 UI ！（如 label1.Text = "...";）

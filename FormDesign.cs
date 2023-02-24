@@ -13,7 +13,7 @@ namespace vsGUI
 {
     public partial class FormDesign : Form
     {
-        private int currentNum = 0;
+        private int currentNum = 0;  //记录总量和每种基酒/配料的量，每1=10ml
         private int num1 = 0;
         private int num2 = 0;
         private int num3 = 0;
@@ -26,9 +26,14 @@ namespace vsGUI
         public FormDesign()
         {
             InitializeComponent();
-            InitLanguage();
+            InitLanguage();  //初始化文本
         }
 
+        /// <summary>
+        /// m 减1，如果已经小于等于0则return，不操作
+        /// p 加1，如果已经大于等于8则return，不操作
+        /// button 1~6
+        /// </summary>
         private void button1m_Click(object sender, EventArgs e)
         {
             if (num1 <= 0)
@@ -161,8 +166,10 @@ namespace vsGUI
             UpdateCurrentNum();
         }
 
+        //确认键监听
         private void buttonYes_Click(object sender, EventArgs e)
         {
+            //判断是否超过最大值 80ml
             if (currentNum > 8)
             {
                 if (GlobalValue.globalLanguage)
@@ -176,7 +183,8 @@ namespace vsGUI
                 return;
             }
 
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();  //声明StringBuilder，用于处理字符串
+
             if (num1 != 0)
             {
                 sb.Append("1" + num1);
@@ -208,7 +216,7 @@ namespace vsGUI
                 GlobalMethod.PortSend("checkP");
                 buttonYes.Visible = false;
 
-                //等待3秒，否则超时
+                //等待3秒，否则超时，需重新点击按钮
                 for (int i = 0; i < 3; i++)
                 {
                     Thread.Sleep(1000);
@@ -225,7 +233,7 @@ namespace vsGUI
             }
         }
 
-        //When click the button, the corresponding childForm will be displayed.
+        //打开新窗口
         public void OpenForm(Form childForm, object btnSender)
         {
             if (currentForm != null)
@@ -242,20 +250,22 @@ namespace vsGUI
             childForm.Show();
         }
 
+        //更新当前值
         private void UpdateCurrentNum()
         {
             currentNum = num1 + num2 + num3 + num4 + num5 + num6;
 
             if (GlobalValue.globalLanguage)
             {
-                label3.Text = "当前 " + currentNum + "0 毫升";
+                label3.Text = "当前 " + currentNum + "0 毫升";  //每1=10ml，所以加个"0"
             }
             else
             {
-                label3.Text = "Now " + currentNum + "0 ml";
+                label3.Text = "Now " + currentNum + "0 ml";  //同上
             }
         }
 
+        //更改文本
         private void InitLanguage()
         {
             if (GlobalValue.globalLanguage)
