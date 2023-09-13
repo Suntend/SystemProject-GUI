@@ -21,8 +21,8 @@
 Basic Info
 基本信息
 
-  HW -   H00365035   - Mingchen Xu
-  XD -  20012100080  - 许铭宸
+  HW -   *********   - ******** **
+  XD -  ***********  - ***
 
   Project started at - 2023.02.06
   Txt last edited at - 2023.02.24
